@@ -1,0 +1,650 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root
+{
+    --bg-parimary-color:#111111;
+    --bg-seconde-color:#222121;
+    --main-primary-color:#F2F2F2;
+    --main-seconde-color:rgb(226, 9, 53);
+    --main-therd-color:rgb(189, 185, 186);
+    --border-color:rgb(82, 79, 79);
+    
+}
+.light-theme
+{
+    --bg-parimary-color:#f6f3f3;
+    --bg-seconde-color:#f0ecec;
+    --main-primary-color:rgb(34, 34, 34);
+    --main-seconde-color:rgb(226, 9, 53);
+    --border-color:rgb(224, 222, 222);
+
+}
+*
+{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+a
+{
+    text-decoration: none;
+}
+.navbar .logo img
+{
+    width: 170px;
+}
+.container
+{
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+
+}
+
+/*********************          Start Design Header          ************************/
+
+.header
+{
+    background-color: var(--bg-parimary-color);
+    height: 100px;
+}
+.header .container
+{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.header .container .logo img
+{
+    width: 170px;
+}
+
+.header .container .menu
+{
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin-top: 15px;
+    overflow: hidden;
+    padding-left: 0;
+}
+.header .container .menu li
+{
+    margin-left: 20px;
+}
+.header .container .menu li a
+{
+    font-size: 17px;
+    color: var(--main-primary-color);
+    padding: 5px 10px;
+}
+.header .container .menu li a:hover
+{
+    color: var(--main-seconde-color);
+}
+.header .container .btn
+{
+    display: none;
+}
+.header .container .btn i
+{
+    font-size: 35px;
+    padding: 5px;
+    color: var(--main-primary-color);
+}
+.header .container .btn i:hover
+{
+    color: var(--main-seconde-color);
+}
+.header .container .theme
+{
+    margin-left: auto;
+}
+.header .container .theme i
+{
+    font-size: 25px;
+    color: var(--main-primary-color);
+    line-height: 100px;
+    cursor: pointer;
+    padding: 5px;
+}
+.header .container .theme #dark-mode
+{
+    display: none;
+}
+.header .container .theme #dark-mode.active
+{
+    display: inline-block;
+}
+.header .container .theme #light-mode
+{
+    display: none;
+}
+.header .container .theme #light-mode.active
+{
+    display: inline-block;
+}
+@media screen and (max-width: 768px) 
+{
+    .header
+    {
+        height: fit-content;
+    }
+    .header .container
+    {
+        min-width: 90% !important;
+        flex-wrap: wrap;
+        
+    }
+    .header .container .menu
+    {
+        width: 100%;
+        flex-direction: column;
+        position: relative;
+        padding: 30px 0 30px 10px;
+        background-color: var(--bg-seconde-color);
+        transform: translateY(-200px);
+        transition: all 1s ease-in-out;
+        display: none;
+    }
+    .header .container .menu.active
+    {
+        display: block;
+        transform: translateY(0);
+    }
+    .header .container .menu li
+    {
+        margin-bottom: 15px;
+    }
+    .header .container .menu li:last-of-type
+    {
+        margin-bottom: 0;
+    }
+    .header .container .menu li a
+    {
+        font-size: 18px;
+        padding: 5px;
+    }
+    .header .container .btn
+    {
+        display: block;
+    }
+}
+
+
+
+/*********************          Start Design Main          ************************/
+.main-section
+{
+    max-height: 100vh;
+    background-color: var(--bg-parimary-color);
+}
+.main-section .left,
+.main-section .right
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.main-section .right .content h4
+{
+    font-size: 18px;
+    color: var(--main-seconde-color);
+}
+
+.main-section .right .content h2
+{
+    font-size: 50px;
+    font-weight: 600;
+    color: var(--main-primary-color);
+}
+.main-section .right .content p
+{
+    color: var(--main-therd-color);
+}
+.main-section .right .content a
+{
+    background-color: var(--main-seconde-color);
+    color:#f6f3f3;
+    padding: 10px 30px;
+    border-radius: 4px;
+    transition: all .1s ease-in-out;
+}
+.main-section .right .content a:hover
+{
+    transform: translateY(-1px);
+}
+@media screen and (max-width: 768px) 
+{
+    .main-section
+    {
+        max-height: fit-content;
+    }
+    .main-section .left img
+    {
+        width: 60%;
+    }
+    .main-section .right
+    {
+        padding: 40px 0;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 500px)
+{
+    .main-section .right .content h2
+    {
+        font-size: 35px;
+    }
+    .main-section .right .content p
+    {
+        font-size: 15px;
+    }
+}
+
+/*********************          design About desction         ************************/
+.about-section
+{
+    padding: 80px 0;
+    background-color: var(--bg-parimary-color);
+    position: relative;
+}
+.about-section::before
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: var(--bg-seconde-color);
+    z-index: 0;
+}
+.about-section .container .skills
+{
+    margin-bottom: 40px;
+}
+.about-section .skill
+{
+    border: 1px solid var(--border-color);
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    background-color: var(--bg-seconde-color);
+    z-index: 1;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.about-section .skill .icon
+{
+    font-size: 55px;
+    color: var(--main-seconde-color);
+    text-align: center;
+    transition: all .3s ease-in-out;
+
+}
+.about-section .skill .title
+{
+    margin-bottom: 15px;
+    color: var(--main-primary-color);
+    transition: all .3s ease-in-out;
+
+}
+.about-section .skill p
+{
+    color: var(--main-therd-color);
+    transition: all .3s ease-in-out;
+
+}
+.about-section .skill a
+{
+    width: fit-content;
+    color: var(--main-seconde-color);
+    display: flex;
+    align-items: center;    
+    transition: all .3s ease-in-out;
+
+}
+.about-section .skill a i
+{
+    margin-left: 5px;
+}
+.about-section .skill:hover
+{
+    background-color: var(--main-seconde-color);
+}
+.about-section .skill:hover .icon
+{
+    color:#f6f3f3;
+}
+.about-section .skill:hover .title
+{
+    color:#f6f3f3;
+}
+.about-section .skill:hover p
+{
+    color:#f0ecec;
+}
+.about-section .skill:hover a
+{
+    color:#f0ecec;
+}
+.about-section .experience .years
+{
+    margin-bottom: 20px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 1;
+}
+.about-section .experience .years h2
+{
+    font-size: 60px;
+    font-weight: bold;
+    color: var(--main-seconde-color);
+    margin-bottom: 5px;
+}
+.about-section .experience .years p
+{
+    font-weight: bold;
+    font-size: 17px;
+    color: var(--main-primary-color);
+}
+.about-section .experience .counters .counter
+{
+    margin-bottom: 20px;
+    background-color: var(--bg-seconde-color);
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1;
+    border: 1px solid var(--border-color);
+
+}
+.about-section .experience .counters .counter h2
+{
+    font-weight: bold;
+    color: var(--main-seconde-color);
+}
+.about-section .experience .counters .counter p
+{
+    color: var(--main-therd-color)
+}
+@media screen and (max-width: 768px) 
+{
+    .about-section .skill .title
+    {
+        font-size: 20px;
+    }
+    .about-section .skill p,
+    .about-section .skill a
+    {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 500px)
+{
+    .about-section .experience .years h2
+    {
+        font-size: 40px;
+    }
+}
+/*********************          design Projects desction         ************************/
+.projects-section
+{
+    padding: 80px 0 40px;
+    background-color: var(--bg-parimary-color);
+}
+
+.projects-section .head .content h3
+{
+    color: var(--main-primary-color);
+}
+.projects-section .head .content p
+{
+    color: var(--main-seconde-color);
+}
+.projects-section .head .btn a
+{
+    background-color: var(--main-seconde-color);
+    color:#f6f3f3;
+    border-radius: 2px;
+    transition: all .2s ease-in-out;
+} 
+.projects-section .head .btn a:hover
+{
+    transform: translateY(-1px);
+}
+.projects-section .projects
+{
+    margin-bottom: 70px;
+}
+.projects-section .projects .project
+{
+    margin-bottom: 40px;
+}
+.projects-section .projects .project .image-container
+{
+    padding: 40px 30px;
+    background-color: var(--bg-seconde-color);
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+.projects-section .projects .project .image-container .image
+{
+    position: relative;
+    height: 200px;
+    border-radius: 5px;
+}
+.projects-section .projects .project .image-container .image img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.projects-section .projects .project .title h3
+{
+    font-size: 20px;
+    color: var(--main-primary-color);
+}
+.projects-section .projects .project .title a
+{
+    color: var(--main-seconde-color);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: all .2s ease-in-out;
+    width: fit-content;
+}
+.projects-section .projects .project .title a i
+{
+    margin-left: 10px;
+    transition: all .2s ease-in-out;
+}
+.projects-section .projects .project .title a:hover i
+{
+    transform: translateX(5px);
+}
+@media screen and (max-width: 768px) 
+{
+    .projects-section .head .content h3
+    {
+        font-size: 25px;
+    }
+    .projects-section .head .content p
+    {
+        font-size: 14px;
+    }
+}
+
+/*********************          design Conatct desction         ************************/
+.contact-section
+{
+    background-color: var(--bg-seconde-color);
+    padding: 30px;
+    border-radius: 3px;
+    margin-bottom: 45px;
+}
+.contact-section h3
+{
+    font-size: 45px;
+    color: var(--main-primary-color);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.contact-section p
+{
+    color: var(--main-therd-color);
+}
+.contact-section .contact-btn
+{
+    background-color: var(--main-seconde-color);
+    color:#f6f3f3;
+    padding: 10px 30px;
+    border-radius: 2px;
+    transition: all .2s ease-in-out;
+}
+.contact-section .contact-btn:hover
+{
+    background-color: var(--main-seconde-color);
+    color:#f6f3f3;
+    transform: translateY(-1px);
+}
+@media screen and (max-width: 768px) 
+{
+    .contact-section h3
+    {
+        font-size: 35px;
+    }
+    .contact-section p
+    {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    .contact-section .contact-btn
+    {
+        font-size: 15px;
+    }
+
+}
+@media screen and (max-width: 500px)
+{
+    .contact-section h3
+    {
+        font-size: 28px;
+    }
+    .contact-section .contact-btn
+    {
+        font-size: 10px;
+    }
+}
+/*************          Menu Footer          *****************/
+.footer-menu .nav-link
+{
+    margin-left:13px;
+    color: var(--main-primary-color);
+    font-size: 17px;
+}
+.footer-menu .nav-link:hover
+{
+    color: var(--main-seconde-color);
+}
+@media screen and (max-width: 768px) 
+{
+    .footer-menu .nav-link
+    {
+        margin-left: 5px;
+    }
+}
+
+/*************          Footer          *****************/
+.footer-section
+{
+    background-color: var(--bg-seconde-color);
+    overflow: hidden;
+}
+.footer
+{
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+} 
+.footer .logo 
+{
+    overflow: hidden;
+}
+.footer .logo img
+{
+    width: 170px;
+}
+.footer .logo:hover
+{
+    cursor: pointer;
+}
+.footer .social .nav-link
+{
+    margin-left:13px;
+    color: var(--main-primary-color);
+    font-size: 32px;
+}
+.footer .social .nav-link:hover,
+.footer .developper .btn:hover
+{
+    color: var(--main-seconde-color);
+}
+.footer .developper .btn
+{
+    line-height: 50px;
+    font-size: 20px;
+    color: var(--main-primary-color);
+}
+@media screen and (max-width: 768px) 
+{
+    
+    .footer .developper  
+    {
+        width: 100%;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 500px) 
+{
+    
+    .footer .developper  
+    {
+        font-size: 15px;
+    }
+    .footer-menu .nav-link
+    {
+        font-size: 10px;
+    }
+    .footer .social .nav-link
+    {
+        font-size: 20px;
+    }
+    .footer .logo img
+    {
+        width: 100px;
+    }
+    .footer .developper .btn
+    {
+        font-size: 10px;
+    }
+    .contact-section
+    {
+        margin-bottom: 20px;
+    }
+}
